@@ -8,7 +8,7 @@ Topic: The Simplex Algorithm
 Goal: The program will attempt to solve a standard form linear optimization problem in standard form using
       the simplex algorithm. 
 
-Outline of paper:
+#Outline of paper:
 
 I) Overview of linear optimization problems.
       a) Standard form:
@@ -30,20 +30,20 @@ IV) Code for the simplex aglorithm
 V) Example outputs. 
       
 
-Outline of code:
+#Outline of code:
 
-#Input objective function and constraints
+Input objective function and constraints
   c = objective vector
   A = constraint coefficient vector
   b = constraint vector
   #I don't think I need to define variables x1....xn, because not necessary for simplex algorithm
   
-#Set up initial tableau as a matrix filled with matrices that are simply lists of lists(?).
+Set up initial tableau as a matrix filled with matrices that are simply lists of lists(?).
 
   [0  A I b]  #note, if A is (m X n), then I is (m X m), b is (m X 1), c is (1 X n).
   [-1 c 0 0]
 
-#Perform a pivot on the initial tableau
+Perform a pivot on the initial tableau
 
   1. choose column such that the value of c is the largest.
   2. choose row such that the ratio b/A(column values of the column chosen) is smallest.
