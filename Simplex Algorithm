@@ -1,0 +1,52 @@
+#The following code sets up a Tableau from a maximization problem in standard form
+#and conducts the simplex algorithm on the tableau to solve the maximization problem.
+
+
+#=========================================================================================================
+import numpy as np
+
+#Setting up the tableau
+
+#List out the coefficients of the constraint functions.
+const1 = [1, 5, 3]        # x + 2y + 3z <= 12
+const2 = [1, 0, 1]        # x +    +  z <= 6
+    #add in more constraints here if necessary
+
+#Add in code that reads the number of variables and the number of constraint equations
+num_const = 2        #Number of constrains in optimization problem
+num_var = 3          #Number of variables in optimization problem
+
+#Build the constriant coefficient matrix.
+A = matrix(num_const, num_var)
+A[0] = const1
+A[1] = const2
+print "A = "
+show(A)
+
+#Build the vector b which are the right hand side of the constraint equations.
+b = matrix(num_const,1)   # x + 2y + 3z <= 12
+                          # x +    +  z <= 6
+b[0] = 12
+b[1] = 7
+print "b = "
+show(b)
+    #if can, put in code that more easily inputs the RHS of constraints as a vector/matrix b
+
+#Build the Basis identity matrix
+I = matrix(np.identity(num_const))
+print "I = "
+show(I)
+
+#Build the object function matrix, c
+c = [1, 1, 3]        # from objective function, maximize x + y + 3z
+
+#Build the initial Tableau, T
+    #...not quite sure how to actually combine all the matrices into this Tableau
+
+#=======================================================================================================
+#Running the Simplex Algorithm
+
+#Given a Tableua, T
+
+
+#...more code to be added.
