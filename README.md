@@ -10,48 +10,48 @@ Goal: The program will attempt to solve a standard form linear optimization prob
 
 #Outline of paper:
 
-I) Overview of linear optimization problems.
+I) Overview of linear optimization problems
       a) Standard form:
             min cx
             such that Ax <= b
             x1...xn >= 0
-      b) real world uses.
-II) Geometry of linear optimization problems.
-      a)Feasible solutions
-      b)No solutions/infeasibility
-      c)Solutions at vertices (include diagram)
+      b) Real world uses.
+II) Geometry of linear optimization problems
+      a) Feasible solutions
+      b) No solutions/infeasibility
+      c) Solutions at vertices (include diagram)
 III) Overview of how simplex algorithm works.
-      a) diagrams of this process...vertex checking
-      b) the basis
-      c) tableau
-      d) examples
-      e) cases when simplex algorithm fails
+      a) Diagrams of this process (vertex checking)
+      b) The basis
+      c) Tableau
+      d) Examples
+      e) Cases when simplex algorithm fails
 IV) Code for the simplex aglorithm
-V) Example outputs. 
+V) Example outputs
       
 
 #Outline of code:
 
-Input objective function and constraints
+Input objective function and constraints - 
   c = objective vector
   A = constraint coefficient vector
   b = constraint vector
   #I don't think I need to define variables x1....xn, because not necessary for simplex algorithm
   
-Set up initial tableau as a matrix filled with matrices that are simply lists of lists(?).
+Set up initial tableau as a matrix filled with matrices that are simply lists of lists - 
 
   [0  A I b]  #note, if A is (m X n), then I is (m X m), b is (m X 1), c is (1 X n).
   [-1 c 0 0]
 
-Perform a pivot on the initial tableau
+Perform a pivot on the initial tableau - 
 
-  1. choose column such that the value of c is the largest.
-  2. choose row such that the ratio b/A(column values of the column chosen) is smallest.
-  3. pivot on this entry. (i.e. row reduce to make an identity column)
-  4. repeat on largest value of c until all c values are less than 0.
+  1. Choose column such that the value of c is the largest.
+  2. Choose row such that the ratio b/A(column values of the column chosen) is smallest.
+  3. Pivot on this entry. (i.e. row reduce to make an identity column).
+  4. Repeat on largest value of c until all c values are less than 0.
   5. Note, technically conducting this on c + vector of 0's that are in the basis, so will need to redefine this vector.
-  6. check for infeasibility, cycling/degeneracy, etc.
-  7. output the optimal solution and value. 
+  6. Check for infeasibility, cycling/degeneracy, etc.
+  7. Output the optimal solution and value. 
 
 
   
