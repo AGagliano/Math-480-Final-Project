@@ -1,8 +1,6 @@
 Math-480-Final-Project
 ======================
 
-5 Pages of written text. 
-
 Topic: The Simplex Algorithm
 
 Goal: The program will attempt to solve a standard form linear optimization problem in standard form using
